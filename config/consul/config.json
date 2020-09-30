@@ -1,0 +1,16 @@
+{
+  "watches": [
+    {
+      "type": "keyprefix",
+      "prefix": "configs/orgs/",
+      "handler_type": "http",
+      "http_handler_config": {
+        "path": "http://docker.for.mac.localhost:3000/watch",
+        "method": "POST",
+        "header": { "x-configs": ["configs"] },
+        "timeout": "10s",
+        "tls_skip_verify": false
+      }
+    }
+  ]
+}

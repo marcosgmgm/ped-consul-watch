@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  consul:
+    image: consul
+    ports:
+      - 8500:8500
+    volumes:
+      - ./config/consul/config.json:/consul/config/config.json
+    networks:
+      - ped-consul
+
+networks:
+  ped-consul:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.68.76.1/24
